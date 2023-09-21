@@ -27,11 +27,18 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	// implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.cloud:spring-cloud-starter-config")
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	// compileOnly("org.springframework.security:spring-security-web")
+	// compileOnly("org.springframework.security:spring-security-config")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("com.h2database:h2")
 	annotationProcessor("org.projectlombok:lombok")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("io.jsonwebtoken:jjwt:0.2")
+	// implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE")
+	// implementation("org.springframework.security:spring-security-test")
+	// testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 dependencyManagement {

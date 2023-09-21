@@ -25,6 +25,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping()
+    public ResponseEntity<Object> getAllController() throws Exception{
+        return userService.getAllUsersService();
+    }
 
     @PostMapping(value = "/new")
     public ResponseEntity<Object> createNewUserController(@RequestBody()UserEntity newUser) throws Exception {
@@ -48,7 +52,7 @@ public class UserController {
         String email,
         @RequestHeader(value = "auth")
         String token
-        ) throws Exception {
+    ) throws Exception {
         boolean auth = validateToken(token);
         if(auth){
             return userService.getAcountInfoService(email);
@@ -62,7 +66,6 @@ public class UserController {
         @RequestHeader(value = "auth")
         String token
         ) throws Exception {
-        System.out.println(data.email);
         boolean auth = validateToken(token);
         if(auth){
             return userService.deleteAcount(data.email);

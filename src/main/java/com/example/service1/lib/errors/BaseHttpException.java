@@ -2,7 +2,7 @@ package com.example.service1.lib.errors;
 
 import org.springframework.http.HttpStatus;
 
-public class BaseHttpException  {
+public class BaseHttpException extends Throwable  {
     public final HttpStatus status;
     public final String clientMessage;
     public final String serverMessage;
